@@ -3,6 +3,7 @@ import { Navigation } from "react-native-navigation";
 import { Provider } from 'react-redux';
 import configureStore from './src/store/configureStore';
 import React from 'react';
+import SideMenuScreen from './src/screens/SideMenuScreen';
 
 const store = configureStore();   // yeh function configure store ki file say a raha ha
 function ReduxProvider(Component) {
@@ -16,6 +17,7 @@ function ReduxProvider(Component) {
 }
 
 Navigation.registerComponent('Login', () => ReduxProvider(Login), () => Login);
+Navigation.registerComponent(`SideMenuScreen`, () => SideMenuScreen);
 Navigation.events().registerAppLaunchedListener(() => {
 
 

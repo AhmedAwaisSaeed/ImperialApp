@@ -23,7 +23,8 @@ import CardView from './src/components/Cards/CardViewSmall';
 import inputTextView from './src/components/Input/InputTextView';
 import InputTextView from './src/components/Input/InputTextView';
 import BlueButton from './src/components/Buttons/BlueButton';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Navigation } from "react-native-navigation";
 
 class App extends Component  {
 
@@ -54,6 +55,8 @@ setPassword = (value)=>{
 
 onPressedLogin = ()=>{
 
+  this.goToOtherScreen("SideMenuScreen");
+
 }
 
 onPressedForgotPassword = ()=>{
@@ -68,6 +71,27 @@ onPressedSignUp = ()=>{
     this.props.onAddPlace(2);
 
   };
+
+  goToOtherScreen= (screenName)=>{
+
+  
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: screenName,
+        passProps: {
+
+        },
+        options: {
+          statusBar: {
+            drawBehind: true,
+            visible: false
+          }
+        }
+      }
+    });
+  
+  }
+
   render(){
   return (
     <>
