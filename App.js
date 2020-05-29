@@ -203,18 +203,15 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   console.log("in map state to props");
   return {
-    places: state.placessRoot.places,   //placessRoot configure store me ha reducer me say places ka varibale 
+    places: state.placessRoot.places,   
     
-  }; //state to props change kiya
+  }; 
 };
 
-const mapDispatchToProps = dispatch => {  //fucntions ko dispach kiya
+const mapDispatchToProps = dispatch => {  
   console.log("in map dispatch to props");
   return {
-    onAddPlace: name => dispatch(addPlace(name)),  //addplace actions me ha index.js me.
-    // onDeletePlace: () => dispatch(deletePlace()),
-    // onSelectPlace: key => dispatch(selectPlace(key)),
-    // onDeselectPlace: () => dispatch(deselectPlace())
+    onAddPlace: name => dispatch(addPlace(name)),  
   };
 };
 
